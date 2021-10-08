@@ -86,3 +86,4 @@ for epoch in range(5000):
 inp = generated_img.detach().cpu().squeeze()
 inp = denormalize_img(inp)
 plt.imshow(inp)
+plt.savefig("/content/drive/MyDrive/CoolAvatars/av1.jpg")
