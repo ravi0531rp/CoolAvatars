@@ -87,3 +87,18 @@ inp = generated_img.detach().cpu().squeeze()
 inp = denormalize_img(inp)
 plt.imshow(inp)
 plt.savefig("imgs/av1.jpg", bbox_inches='tight' , pad_inches=0)
+
+
+
+
+
+## TODO
+"""
+
+* Take images and other configurable params from a config file
+* Preserve aspect ratio 
+* Extract faces...
+* Different Algorithms and qualitative comparisons.
+* Add multiple samples of style images.
+
+"""
