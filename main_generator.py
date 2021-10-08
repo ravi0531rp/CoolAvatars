@@ -45,8 +45,8 @@ class FeatureExtractor(nn.Module):
 img_transform = transforms.Compose([transforms.ToTensor(),
                                     transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))])
 
-content_img = get_image('/content/drive/MyDrive/NeuralStyleTransfer/content.jpg', img_transform)
-style_img = get_image('/content/drive/MyDrive/NeuralStyleTransfer/style.jpg', img_transform)
+content_img = get_image('imgs/content.jpg', img_transform)
+style_img = get_image('imgs/style.jpg', img_transform)
 generated_img = content_img.clone()    # or nn.Parameter(torch.FloatTensor(content_img.size()))
 generated_img.requires_grad = True
 
@@ -86,4 +86,4 @@ for epoch in range(5000):
 inp = generated_img.detach().cpu().squeeze()
 inp = denormalize_img(inp)
 plt.imshow(inp)
-plt.savefig("/content/drive/MyDrive/CoolAvatars/av1.jpg")
+plt.savefig("imgs/av1.jpg", bbox_inches='tight' , pad_inches=0)
