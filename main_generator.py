@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def get_image(path, img_transform, size = (300,300)):
+def get_image(path, img_transform, size = (720,1280)):
     image = Image.open(path)
     image = image.resize(size, Image.LANCZOS)
     image = img_transform(image).unsqueeze(0)
